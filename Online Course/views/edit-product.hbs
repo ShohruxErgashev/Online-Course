@@ -1,0 +1,37 @@
+<div class="w-75 mx-auto">
+
+    <p class="fs-1">Edit product</p>
+
+    {{!-- {{#if errorAddProducts}}
+    <div class="alert alert-danger" role="alert">
+    {{errorAddProducts}}
+    </div>
+    {{/if}} --}}
+
+<form action="/edit-product/{{product._id}}" method="post">
+<div class="form-floating mb-3">
+<input value="{{product.title}}" type="text" class="form-control" id="floatingInput" name="title" placeholder="title">
+<label for="floatingInput">Title</label>
+</div>
+
+<div class="form-floating mb-3">
+  <textarea class="form-control" name="description" placeholder="Description" id="floatingTextarea2" style="height: 100px">{{product.description}}</textarea>
+  <label for="floatingTextarea2">Description</label>
+</div>
+
+<div class="form-floating mb-3">
+<input value="{{product.image}}" type="text" class="form-control" id="floatingInput" name="image" placeholder="Image">
+<label for="floatingInput">Image</label>
+</div>
+
+<div class="input-group flex-nowrap">
+  <span class="input-group-text" id="addon-wrapping">$</span>
+  <input value="{{product.price}}" type="number" name="price" class="form-control" placeholder="Prise" aria-label="Username" aria-describedby="addon-wrapping">
+</div>
+
+<button type="submit" class="btn btn-primary mt-3">Edit</button>
+</form>
+
+</div>
+  
+  
